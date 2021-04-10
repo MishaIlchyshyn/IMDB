@@ -30,4 +30,8 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  admin:
+    login_form:
+      login: Увійти
+      forgot_your_password: Забули Ваш пароль?
+      remember_me: Запамятати мене
