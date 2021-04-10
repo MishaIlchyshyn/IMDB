@@ -12,12 +12,18 @@
         </div>
 
         <div class="flex justify-start lg:w-0 lg:flex-1">
-          <a href="#">
-            <span class="sr-only">Workflow</span>
-            <img class="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="">
-          </a>
+          <% if admin_signed_in? %>
+            <%= link_to "IMDB", admin_movies_path, class: "py-2" %>
+          <% else %>
+            <%= link_to "IMDB", root_path, class: "py-2" %>
+          <% end %>
         </div>
-        <%= link_to "Logout", destroy_admin_session_path, :method => :delete %>
+
+        <% if admin_signed_in? %>
+          <%= link_to "Logout", destroy_admin_session_path, :method => :delete %>
+        <% else %>
+          <span></span>
+        <% end %>
       </div>
     </div>
   </div>
