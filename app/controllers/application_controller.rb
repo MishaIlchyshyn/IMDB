@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  require 'pry'
+
   def after_sign_in_path_for(resource)
     admin_movies_path
   end

@@ -1,5 +1,5 @@
 class Admin::MoviesController < Admin::BaseController
-  before_action get_movie: %i[show edit update delete]
+  before_action :get_movie, only: %i[show edit update destroy]
 
   def index
     @movies = Movie.all
@@ -25,10 +25,16 @@ class Admin::MoviesController < Admin::BaseController
   end
 
   def update
-    if current_admin.movies.update(movie_params)
+    if @movie.update(movie_params)
       redirect_to admin_movie_path(@movie)
     else
       render 'edit'
+    end
+  end
+
+  def destroy
+    if @movie.delete
+      redirect_to admin_movies_path
     end
   end
 
