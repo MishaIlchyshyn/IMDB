@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   require 'pry'
+  include Pagy::Backend
 
   def after_sign_in_path_for(resource)
     admin_movies_path

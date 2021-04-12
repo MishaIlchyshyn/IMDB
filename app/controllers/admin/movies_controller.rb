@@ -2,7 +2,7 @@ class Admin::MoviesController < Admin::BaseController
   before_action :get_movie, only: %i[show edit update destroy]
 
   def index
-    @movies = Movie.all
+    @pagy, @movies = pagy(Movie.all, items: 3)
   end
 
   def new

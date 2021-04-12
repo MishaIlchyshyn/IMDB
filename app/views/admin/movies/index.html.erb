@@ -5,6 +5,9 @@
         <div class="overflow-hidden border-b border-gray-200 sm:rounded-lg">
           <%= render 'admin/movies/table' %>
         </div>
+        <div class="flex justify-end mt-6">
+          <%== pagy_bootstrap_nav(@pagy) %>
+        </div>
       </div>
     </div>
   </div>
