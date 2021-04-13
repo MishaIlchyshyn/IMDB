@@ -1,3 +1,5 @@
+require 'securerandom'
+
 class Movie < ApplicationRecord
   enum category:
             [ :comedy,
@@ -12,6 +14,14 @@ class Movie < ApplicationRecord
               :artistic,
               :biographical ]
   validates :title, :text, presence: true
-  validates :title, :text, length: { minimum: 5 }
+  validates :text, length: { minimum: 5 }
   belongs_to :admin
+
+  before_create :set_uuid
+
+  private
+
+  def set_uuid
+    self.uuid = SecureRandom.uuid
+  end
 end

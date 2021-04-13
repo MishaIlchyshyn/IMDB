@@ -1,3 +1,3 @@
-<%= link_to t('admin.table.show'), admin_movie_path(movie.id), class: "text-indigo-600 hover:text-indigo-900" %>
-<%= link_to t('admin.table.edit'), edit_admin_movie_path(movie.id), class: "text-indigo-600 hover:text-indigo-900" %>
-<%= link_to t('admin.table.delete'), admin_movie_path(movie.id), method: :delete, data: { confirm: "Are you shure?" }, class: "text-indigo-600 hover:text-indigo-900" %>
+<%= link_to t('admin.table.show'), admin_movie_path(movie.uuid), class: "text-indigo-600 hover:text-indigo-900" %>
+<%= link_to t('admin.table.edit'), edit_admin_movie_path(movie.uuid), class: "text-indigo-600 hover:text-indigo-900" %>
+<%= link_to t('admin.table.delete'), admin_movie_path(movie.uuid), method: :delete, data: { confirm: "Are you shure?" }, class: "text-indigo-600 hover:text-indigo-900" %>
