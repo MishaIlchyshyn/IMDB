@@ -2,7 +2,7 @@ class Admin::MoviesController < Admin::BaseController
   before_action :get_movie, only: %i[show edit update destroy]
 
   def index
-    @pagy, @movies = pagy(Movie.all, items: 3)
+    @pagy, @movies = pagy(Movie.all, items: 15)
   end
 
   def new
@@ -15,7 +15,7 @@ class Admin::MoviesController < Admin::BaseController
   def create
     @movie = current_admin.movies.new(movie_params)
     if @movie.save
-      redirect_to admin_movie_path(@movie)
+      redirect_to admin_movie_path(@movie), notice: t('notice.movie_was_created')
     else
       render 'new'
     end
@@ -26,7 +26,7 @@ class Admin::MoviesController < Admin::BaseController
 
   def update
     if @movie.update(movie_params)
-      redirect_to admin_movie_path(@movie)
+      redirect_to admin_movie_path(@movie), notice: t('notice.movie_was_updated')
     else
       render 'edit'
     end
@@ -34,7 +34,7 @@ class Admin::MoviesController < Admin::BaseController
 
   def destroy
     if @movie.delete
-      redirect_to admin_movies_path
+      redirect_to admin_movies_path, notice: t('notice.movie_was_deleted')
     end
   end
 
