@@ -65,3 +65,11 @@ en:
     movie_was_created: Фільм було успішно створено
     movie_was_deleted: Фільм було успішно видалено
     movie_was_updated: Фільм було успішно редаговано
+  home:
+    list_movies: Список фільмів
+    no_movies: На цьому сайті поки немає фільмів
+    view: Переглянути
+    navbar:
+      movies: Фільми
+      login: Увійти
+      register: Зареєструватись
