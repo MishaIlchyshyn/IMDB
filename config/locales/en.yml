@@ -58,6 +58,7 @@ en:
       show: Переглянути
       delete: Видалити
       edit: Редагувати
+      no_movies: Немає фільмів
     show_movie:
       category: Категорія
       rating: Рейтинг

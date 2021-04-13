@@ -2,7 +2,7 @@ class MoviesController < ApplicationController
   before_action :get_movie, only: %i[show]
 
   def index
-    @movies = Movie.all
+    @pagy, @movies = pagy(Movie.all, items: 6)
   end
 
   def show
@@ -11,6 +11,6 @@ class MoviesController < ApplicationController
   private
 
   def get_movie
-    @movie = Movie.find_by(uuid: params[:id])
+    @movie = Movie.friendly.find(params[:id])
   end
 end
