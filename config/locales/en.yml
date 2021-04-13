@@ -35,3 +35,33 @@ en:
       login: Увійти
       forgot_your_password: Забули Ваш пароль?
       remember_me: Запамятати мене
+    movie_form:
+      create_movie: Створити фільм
+      edit_movie: Редагувати фільм
+      title: Назва фільму
+      text: Опис фільму
+      category: Категорія
+      save: Зберегти
+    title_page:
+      create_movie: Створити фільм
+      edit_movie: Редагувати фільм
+      list_movies: Список фільмів
+    navbar:
+      movies: Фільми
+      create_movie: Створити фільм
+      logout: Вийти
+    table:
+      title: Назва фільму
+      text: Опис фільму
+      category: Категорія
+      rating: Рейтинг
+      show: Переглянути
+      delete: Видалити
+      edit: Редагувати
+    show_movie:
+      category: Категорія
+      rating: Рейтинг
+  notice:
+    movie_was_created: Фільм було успішно створено
+    movie_was_deleted: Фільм було успішно видалено
+    movie_was_updated: Фільм було успішно редаговано

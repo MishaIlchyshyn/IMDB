@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root "home#index"
 
   namespace :admin do
-    resources :movies, only: %i[index show destroy edit update]
+    resources :movies, only: %i[index new create show destroy edit update]
   end
 end

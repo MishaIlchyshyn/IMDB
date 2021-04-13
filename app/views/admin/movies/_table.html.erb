@@ -1,0 +1,32 @@
+<table class="min-w-full divide-y divide-gray-200">
+  <thead class="bg-gray-50">
+    <tr>
+      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+        <%= t('admin.table.title') %>
+      </th>
+      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+        <%= t('admin.table.text') %>
+      </th>
+      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+        <%= t('admin.table.category') %>
+      </th>
+      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+        <%= t('admin.table.rating') %>
+      </th>
+      <th scope="col" class="relative px-6 py-3">
+        <span class="sr-only"><%= t('admin.table.show') %></span>
+        <span class="sr-only"><%= t('admin.table.edit') %></span>
+        <span class="sr-only"><%= t('admin.table.delete') %></span>
+      </th>
+    </tr>
+  </thead>
+  <tbody class="bg-white divide-y divide-gray-200">
+    <% if @movies.any? %>
+      <% @movies.each do |movie| %>
+        <%= render 'admin/movies/table_line', movie: movie %>
+      <% end %>
+    <% else %>
+      No Movies
+    <% end %>
+  </tbody>
+</table>
