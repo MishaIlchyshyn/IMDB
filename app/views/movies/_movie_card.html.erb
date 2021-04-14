@@ -14,7 +14,11 @@
               <button type="button" class="btn btn-sm btn-outline-secondary"><%= t('home.view') %></button>
             <% end %>
           </div>
-          <small class="text-muted">*****</small>
+          <% if user_signed_in? %>
+            <small class="text-muted">*****</small>
+          <% else %>
+            <span></span>
+          <% end %>
         </div>
       </div>
     </div>

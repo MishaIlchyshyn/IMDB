@@ -3,7 +3,11 @@ class ApplicationController < ActionController::Base
   include Pagy::Backend
 
   def after_sign_in_path_for(resource)
-    admin_movies_path
+    if request.referer == new_admin_session_url
+      admin_movies_path
+    else
+      movies_path
+    end
   end
 
   def after_sign_out_path_for(resource_or_scope)

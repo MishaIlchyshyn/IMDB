@@ -15,12 +15,21 @@
           </li>
         </ul>
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <%= link_to t('home.nabvar.login'), {}, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to t('home.nabvar.register'), {}, class: "nav-link" %>
-          </li>
+          <% if user_signed_in? %>
+            <li class="nav-item">
+              <span class="navbar text-purple-300"><%= current_user.email %></span>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Выйти', destroy_user_session_path, class: "nav-link", :method => :delete %>
+            </li>
+          <% else %>
+            <li class="nav-item <%= active_if?('sessions', 'new') %>">
+              <%= link_to t('home.nabvar.login'), new_user_session_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item <%= active_if?('registrations', 'new') %>">
+              <%= link_to t('home.nabvar.register'), new_user_registration_path, class: "nav-link" %>
+            </li>
+          <% end %>
         </ul>
       </div>
     <% end %>
