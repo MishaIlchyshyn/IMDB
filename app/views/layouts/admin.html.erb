@@ -6,7 +6,12 @@
     <header>
       <%= render "layouts/partials/admin/navbar" %>
     </header>
-    <%= render 'shared/messages' %>
-    <%= yield %>
+    <main class="min-h-screen">
+      <%= render 'shared/messages' %>
+      <%= yield %>
+    </main>
+    <footer class="footer bg-dark mt-auto py-3">
+      <%= render 'layouts/partials/footer' %>
+    </footer>
   </body>
 </html>

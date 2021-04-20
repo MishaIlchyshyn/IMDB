@@ -15,7 +15,7 @@ class Admin::MoviesController < Admin::BaseController
   def create
     @movie = current_admin.movies.new(movie_params)
     if @movie.save
-      redirect_to admin_movie_path(@movie.uuid), notice: t('notice.movie_was_created')
+      redirect_to admin_movie_path(@movie), notice: t('notice.movie_was_created')
     else
       render 'new'
     end
@@ -26,7 +26,7 @@ class Admin::MoviesController < Admin::BaseController
 
   def update
     if @movie.update(movie_params)
-      redirect_to admin_movie_path(@movie.uuid), notice: t('notice.movie_was_updated')
+      redirect_to admin_movie_path(@movie), notice: t('notice.movie_was_updated')
     else
       render 'edit'
     end
@@ -41,10 +41,10 @@ class Admin::MoviesController < Admin::BaseController
   private
 
   def movie_params
-    params.require(:movie).permit(:title, :text, :category)
+    params.require(:movie).permit(:slug, :text, :category)
   end
 
   def get_movie
-    @movie = Movie.find_by(uuid: params[:id])
+    @movie = Movie.friendly.find(params[:id])
   end
 end

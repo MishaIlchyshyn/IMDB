@@ -33,8 +33,8 @@ en:
   admin:
     login_form:
       login: Увійти
-      forgot_your_password: Забули Ваш пароль?
-      remember_me: Запамятати мене
+    register_form:
+      register: Зареєструватись
     movie_form:
       create_movie: Створити фільм
       edit_movie: Редагувати фільм
@@ -58,6 +58,7 @@ en:
       show: Переглянути
       delete: Видалити
       edit: Редагувати
+      no_movies: Немає фільмів
     show_movie:
       category: Категорія
       rating: Рейтинг
@@ -65,3 +66,15 @@ en:
     movie_was_created: Фільм було успішно створено
     movie_was_deleted: Фільм було успішно видалено
     movie_was_updated: Фільм було успішно редаговано
+  home:
+    list_movies: Список фільмів
+    no_movies: Фільмів не знайдено
+    view: Переглянути
+    navbar:
+      movies: Фільми
+      login: Увійти
+      register: Зареєструватись
+      output: Вийти
+    filter_form:
+      category: Виберіть категорію
+      save: Фільтрувати

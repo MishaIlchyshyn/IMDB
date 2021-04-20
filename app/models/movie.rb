@@ -1,6 +1,9 @@
 require 'securerandom'
 
 class Movie < ApplicationRecord
+  extend FriendlyId
+
+  friendly_id :title, use: :slugged
   enum category:
             [ :comedy,
               :militants,
@@ -13,15 +16,8 @@ class Movie < ApplicationRecord
               :detectives,
               :artistic,
               :biographical ]
-  validates :title, :text, presence: true
+  validates :slug, uniqueness: true
+  validates :slug, :text, presence: true
   validates :text, length: { minimum: 5 }
   belongs_to :admin
-
-  before_create :set_uuid
-
-  private
-
-  def set_uuid
-    self.uuid = SecureRandom.uuid
-  end
 end
