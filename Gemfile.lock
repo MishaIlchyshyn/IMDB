@@ -140,6 +140,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.20.3, < 2.0)
     rake (13.0.3)
+    ratyrate (1.2.2.alpha)
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
@@ -206,6 +207,7 @@ DEPENDENCIES
   pry
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.6)
+  ratyrate
   sass-rails (>= 6)
   spring
   spring-watcher-listen (~> 2.0.0)

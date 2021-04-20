@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise'
 gem 'pry'
 gem 'pagy'
+gem 'ratyrate'
 gem 'friendly_id', '~> 5.4.0'
 
 # Use Active Storage variant
