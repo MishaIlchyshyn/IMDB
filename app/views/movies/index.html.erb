@@ -3,6 +3,7 @@
     <div class="text-center">
       <h3 class="text-4xl mb-16 font-medium leading-6 text-gray-900"><%= t('home.list_movies') %></h3>
     </div>
+    <%= render 'movies/filter_form' %>
     <div class="row">
       <% if @movies.any? %>
         <% @movies.each do |movie| %>

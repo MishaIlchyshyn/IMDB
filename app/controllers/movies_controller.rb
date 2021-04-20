@@ -2,7 +2,7 @@ class MoviesController < ApplicationController
   before_action :get_movie, only: %i[show]
 
   def index
-    @pagy, @movies = pagy(Movie.all, items: 6)
+    @pagy, @movies = pagy(MoviesQuery.new(params[:search]).results, items: 6)
   end
 
   def show

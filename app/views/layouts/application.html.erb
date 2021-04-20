@@ -6,8 +6,11 @@
     <header>
       <%= render 'layouts/partials/navbar' %>
     </header>
-    <main role="main">
+    <main class="min-h-screen">
       <%= yield %>
     </main>
+    <footer class="footer bg-dark mt-auto py-3">
+      <%= render 'layouts/partials/footer' %>
+    </footer>
   </body>
 </html>

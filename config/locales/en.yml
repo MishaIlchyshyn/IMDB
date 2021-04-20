@@ -68,10 +68,13 @@ en:
     movie_was_updated: Фільм було успішно редаговано
   home:
     list_movies: Список фільмів
-    no_movies: На цьому сайті поки немає фільмів
+    no_movies: Фільмів не знайдено
     view: Переглянути
     navbar:
       movies: Фільми
       login: Увійти
       register: Зареєструватись
       output: Вийти
+    filter_form:
+      category: Виберіть категорію
+      save: Фільтрувати
